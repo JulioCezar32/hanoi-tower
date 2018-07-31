@@ -6,10 +6,11 @@ NUMBER_OF_PINS = 4
 class Tower(Ring, Pin):
     def __init__(self, number_of_rings):
         self._registrator = number_of_rings
+        self._number_of_moviments = 0
         self.set_pins()
         self.set_rings(number_of_rings)
         self.run(self._registrator, 1, 3, 2)
-        #All Rings Should be initilized inside the pinOne
+        self.result(number_of_rings)
 
     def set_pins(self):
         pinOne = Pin()
@@ -36,5 +37,10 @@ class Tower(Ring, Pin):
         if(number_of_ring > 0):
             self.run(number_of_ring - 1 , origin, auxiliary, destination)
             self.move_ring(origin, destination)
-        #    print("DISCO {} MOVIDO DO PINO {} PARA O PINO {}".format(number_of_ring, auxiliary, destination))
+            self._number_of_moviments += 1
+        #    print("DISCO {} MOVED FROM PIN {} TO PIN {}".format(number_of_ring, auxiliary, destination))
             self.run(number_of_ring -1, auxiliary, destination, origin)
+
+    def result(self, number_of_rings):
+        main_text = "The minimum number of moviments for {} rings is  ".format(number_of_rings)
+        print(main_text + str(self._number_of_moviments))
