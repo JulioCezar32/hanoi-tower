@@ -12,16 +12,24 @@ class Pin:
 
 
     def verify_the_inserted_ring(self, ring):
-        ## extrair os metodos
-        if self.rings == []:
+        if self.pin_is_void():
             return True
-        elif ring.size < self.rings[-1].size:
+        elif self.exist_a_smaller_ring_on_the_pin(ring):
             return True
         else:
             return False
 
+
     def remove_ring(self):
         return self.rings.pop()
+
+    def exist_a_smaller_ring_on_the_pin(self, ring):
+        last_ring_on_pin = self.rings[-1]
+        return ring.size < last_ring_on_pin.size
+
+    def pin_is_void(self):
+        result = (self.rings == [])
+        return result
 
     def __str__(self):
         number_of_rings = len(self.rings)

@@ -1,2 +1,3 @@
 from tower import Tower
-tower = Tower(6)
+tower = Tower(1)
+print(len(tower.pins))
