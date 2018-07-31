@@ -1,0 +1,10 @@
+Ask if test_remove_a_ring_from_the_pin_one_and_insert_into_pin_two needs is correct. I`m assuming that the rum  method
+will always start with move the ring from pin one to pin two then my test have this name, but my method not
+
+
+Ask about the __str__ this case should be tested too?
+
+
+test_cant_insert_a_greater_ring_on_a_small_ring_nothing_change?
+"nothing change???"
+try execute all comands, what happens when has an error on the midle of execution
