@@ -78,7 +78,11 @@ class TestPin(unittest.TestCase):
         pin.insert_ring(ringOne)
 
         with self.assertRaises(ValueError):
-            pin.insert_ring(ringTwo)
+            pin.insert_ring(ringOne)
+
+
+#class WrongMoviment(ValueError):
+#    pass
 
 if __name__ == '__main__':
     unittest.main()

@@ -8,7 +8,7 @@ class Pin:
         if self.verify_the_inserted_ring(ring):
             self.rings.append(ring)
         else:
-            raise ValueError
+            raise ValueError("Cannot make this moviment")
 
 
     def verify_the_inserted_ring(self, ring):
@@ -36,3 +36,7 @@ class Pin:
         for line in range(0, number_of_rings):
             number_of_space = number_of_rings - line
             print(number_of_space* ' '  + line * '-' + '|' + line*'-' + number_of_space* ' ')
+
+
+#class WrongMoviment(Exception):
+#
